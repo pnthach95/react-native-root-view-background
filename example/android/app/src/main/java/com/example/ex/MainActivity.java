@@ -1,4 +1,4 @@
-package com.example.pnthach95reactnativerootviewbackground;
+package com.example.ex;
 
 import com.facebook.react.ReactActivity;
 
