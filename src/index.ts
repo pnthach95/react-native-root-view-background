@@ -1,35 +1,19 @@
-/* eslint-disable no-bitwise */
 import { NativeModules, Platform } from 'react-native';
+import tinycolor from 'tinycolor2';
 
-function hexToRgb(hex: string) {
-  let c: string[];
-  if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-    c = hex.substring(1).split('');
-    if (c.length === 3) {
-      c = [c[0], c[0], c[1], c[1], c[2], c[2]];
-    }
-    const nc = `0x${c.join('')}`;
-    const red = parseFloat(`${(Number(nc) >> 16) & 255}`);
-    const green = parseFloat(`${(Number(nc) >> 8) & 255}`);
-    const blue = parseFloat(`${Number(nc) & 255}`);
-    return [red, green, blue];
-  }
-  throw new Error('Bad Hex');
-}
-
-function setBackgroundRGB(r: number, g: number, b: number, a: number) {
-  NativeModules.ReactNativeRootViewBackground.setBackground(r, g, b, a);
-}
-
-function setRootViewBackgroundColor(hex: string) {
+function setRootViewBackgroundColor(color: string) {
+  const parsedColor = tinycolor(color);
   if (Platform.OS === 'ios') {
-    const [r, g, b] = hexToRgb(hex);
-    setBackgroundRGB(r, g, b, 1);
+    NativeModules.ReactNativeRootViewBackground.setBackground(
+      parsedColor.toRgb().r,
+      parsedColor.toRgb().g,
+      parsedColor.toRgb().b,
+      1,
+    );
   } else {
-    if (hex.length === 4) {
-      hex = `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`;
-    }
-    NativeModules.ReactNativeRootViewBackground.setBackground(hex);
+    NativeModules.ReactNativeRootViewBackground.setBackground(
+      parsedColor.toHexString(),
+    );
   }
 }
 
