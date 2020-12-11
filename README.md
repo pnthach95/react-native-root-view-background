@@ -1,5 +1,9 @@
 # React Native Root View Background
 
+Original: https://github.com/johniak/react-native-root-view-background
+
+Remake to support React Native latest version.
+
 ## After
 
 <p align="center" >
@@ -16,6 +20,8 @@
 ## Getting started
 
 `npm i @pnthach95/react-native-root-view-background --save`
+
+or
 
 `yarn add @pnthach95/react-native-root-view-background`
 
