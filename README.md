@@ -4,6 +4,8 @@ Original: https://github.com/johniak/react-native-root-view-background
 
 Remake to support React Native latest version.
 
+Set background color of root view to fix white flash when using dark theme and navigating with React Navigation. Read more in `example`.
+
 ## After
 
 <p align="center" >
@@ -29,10 +31,10 @@ or
 ```javascript
 import { setRootViewBackgroundColor } from 'react-native-root-view-background';
 
-export default class Main extends Component {
-    componentDidMount(){
-        setRootViewBackgroundColor('#ccc');
-    }
+const Main = () => {
+  useEffect(() => {
+    setRootViewBackgroundColor('#ccc');
+  }, []);
 }
 ```
 
