@@ -11,11 +11,3 @@ type RootStackParamList = {
 };
 
 type ScreenProps = StackScreenProps<RootStackParamList, 'screen'>;
-
-declare global {
-  namespace ReactNativePaper {
-    interface ThemeColors {
-      card: string;
-    }
-  }
-}

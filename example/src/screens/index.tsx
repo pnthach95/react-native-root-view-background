@@ -1,6 +1,12 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, StatusBar } from 'react-native';
-import { Button, useTheme } from 'react-native-paper';
+import {
+  View,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
+import { useTheme } from '@react-navigation/native';
 
 import { Context } from '../context';
 import type { ScreenProps } from '../typings';
@@ -8,6 +14,7 @@ import type { ScreenProps } from '../typings';
 const Screen: React.FC<ScreenProps> = ({ navigation }) => {
   const { dispatch, state } = useContext(Context);
   const { colors } = useTheme();
+  const primary = { backgroundColor: colors.primary };
   const canGoBack = navigation.canGoBack();
   const goBack = () => navigation.goBack();
   const goNext = () => navigation.push('screen');
@@ -21,24 +28,27 @@ const Screen: React.FC<ScreenProps> = ({ navigation }) => {
       />
       {canGoBack && (
         <>
-          <Button mode="contained" onPress={goBack}>
-            Go back
-          </Button>
+          <TouchableOpacity onPress={goBack} style={[primary, styles.button]}>
+            <Text style={styles.whiteText}>Go back</Text>
+          </TouchableOpacity>
           <View style={styles.space} />
         </>
       )}
-      <Button mode="contained" onPress={onSwitch}>
-        Switch theme
-      </Button>
+      <TouchableOpacity onPress={onSwitch} style={[primary, styles.button]}>
+        <Text style={styles.whiteText}>Switch theme</Text>
+      </TouchableOpacity>
       <View style={styles.space} />
-      <Button mode="contained" onPress={goNext}>
-        Next screen
-      </Button>
+      <TouchableOpacity onPress={goNext} style={[primary, styles.button]}>
+        <Text style={styles.whiteText}>Next screen</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 10,
+  },
   center: {
     alignItems: 'center',
     flex: 1,
@@ -46,6 +56,9 @@ const styles = StyleSheet.create({
   },
   space: {
     height: 20,
+  },
+  whiteText: {
+    color: 'white',
   },
 });
 
