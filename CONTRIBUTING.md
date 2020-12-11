@@ -51,7 +51,7 @@ yarn test
 
 To edit the Objective-C files, open `example/ios/ReactNativeRootViewBackgroundExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > @pnthach95/react-native-root-view-background`.
 
-To edit the Kotlin files, open `example/android` in Android studio and find the source files at `pnthach95reactnativerootviewbackground` under `Android`.
+To edit the Kotlin files, open `example/android` in Android studio and find the source files at `ex` under `Android`.
 
 ### Commit message convention
 
