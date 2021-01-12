@@ -261,3 +261,10 @@ babel.config.js
 .grenrc.js
 .clang-format
 .prettierrc
+
+example
+android/build
+.circleci
+.env
+.editorconfig
+*.tgz
