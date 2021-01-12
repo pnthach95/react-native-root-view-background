@@ -29,7 +29,7 @@ or
 
 ## Usage
 ```javascript
-import { setRootViewBackgroundColor } from 'react-native-root-view-background';
+import { setRootViewBackgroundColor } from '@pnthach95/react-native-root-view-background';
 
 const Main = () => {
   useEffect(() => {
