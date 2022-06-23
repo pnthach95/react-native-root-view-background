@@ -5,7 +5,7 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { setRootViewBackgroundColor } from '@pnthach95/react-native-root-view-background';
+import { setRootViewBackgroundColor } from '../../../src';
 
 import { Provider, Context } from '../context';
 import Screen from '../screens';

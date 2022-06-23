@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  ReactNativeRootViewBackgroundExample
+//  RootViewBackgroundExample
 //
 
 import Foundation
