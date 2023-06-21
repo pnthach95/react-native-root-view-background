@@ -22,7 +22,7 @@ export const Provider = ({
       state,
       dispatch,
     }),
-    [state, dispatch],
+    [state, dispatch]
   );
 
   return <Context.Provider value={userReducer}>{children}</Context.Provider>;

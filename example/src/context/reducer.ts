@@ -2,7 +2,7 @@ import type { ActionTypes, AppStateProps } from '../typings';
 
 const Reducer: React.Reducer<AppStateProps, ActionTypes> = (
   prevState,
-  payload,
+  payload
 ) => {
   switch (payload.type) {
     case 'SWITCH_THEME':
