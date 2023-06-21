@@ -1,8 +1,9 @@
 const path = require('path');
+const pak = require('../package.json');
 
 module.exports = {
   dependencies: {
-    'reactnativerootviewbackground': {
+    [pak.name]: {
       root: path.join(__dirname, '..'),
     },
   },

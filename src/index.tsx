@@ -1,17 +1,17 @@
 import { NativeModules, Platform } from 'react-native';
-import tinycolor from 'tinycolor2';
+import { colord } from 'colord';
 
 function setRootViewBackgroundColor(color: string) {
-  const parsedColor = tinycolor(color);
+  const parsedColor = colord(color);
   if (Platform.OS === 'ios') {
     NativeModules.RootViewBackground.setBackground(
       parsedColor.toRgb().r,
       parsedColor.toRgb().g,
       parsedColor.toRgb().b,
-      1,
+      1
     );
   } else {
-    NativeModules.RootViewBackground.setBackground(parsedColor.toHexString());
+    NativeModules.RootViewBackground.setBackground(parsedColor.toHex());
   }
 }
 

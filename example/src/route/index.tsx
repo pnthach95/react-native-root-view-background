@@ -6,11 +6,11 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { setRootViewBackgroundColor } from '../../../src';
-
 import { Provider, Context } from '../context';
 import Screen from '../screens';
+import type { RootStackParamList } from '../typings';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const Container = () => {
   const { state } = useContext(Context);

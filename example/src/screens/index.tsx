@@ -7,11 +7,10 @@ import {
   Text,
 } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-
 import { Context } from '../context';
 import type { ScreenProps } from '../typings';
 
-const Screen: React.FC<ScreenProps> = ({ navigation }) => {
+const Screen = ({ navigation }: ScreenProps) => {
   const { dispatch, state } = useContext(Context);
   const { colors } = useTheme();
   const primary = { backgroundColor: colors.primary };
