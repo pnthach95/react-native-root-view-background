@@ -6,5 +6,5 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule
 abstract class RootViewBackgroundSpec internal constructor(context: ReactApplicationContext) :
   ReactContextBaseJavaModule(context) {
 
-  abstract fun setBackground(color: String)
+  abstract fun setBackground(r: Double, g: Double, b: Double, a: Double)
 }
