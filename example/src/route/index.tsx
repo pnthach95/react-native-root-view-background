@@ -1,14 +1,22 @@
 import React, { useContext, useEffect } from 'react';
+import { StatusBar, StyleSheet } from 'react-native';
 import {
   NavigationContainer,
   DarkTheme,
   DefaultTheme,
 } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { setRootViewBackgroundColor } from '../../../src';
 import { Provider, Context } from '../context';
 import Screen from '../screens';
 import type { RootStackParamList } from '../typings';
+
+const styles = StyleSheet.create({
+  full: {
+    flex: 1,
+  },
+});
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -26,6 +34,10 @@ const Container = () => {
 
   return (
     <NavigationContainer theme={selectTheme}>
+      <StatusBar
+        backgroundColor={selectTheme.colors.card}
+        barStyle={state.isDark ? 'light-content' : 'dark-content'}
+      />
       <Stack.Navigator>
         <Stack.Screen name="screen" component={Screen} />
       </Stack.Navigator>
@@ -35,9 +47,11 @@ const Container = () => {
 
 const Route = () => {
   return (
-    <Provider>
-      <Container />
-    </Provider>
+    <GestureHandlerRootView style={styles.full}>
+      <Provider>
+        <Container />
+      </Provider>
+    </GestureHandlerRootView>
   );
 };
 

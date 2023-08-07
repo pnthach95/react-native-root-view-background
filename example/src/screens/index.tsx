@@ -1,17 +1,11 @@
 import React, { useContext } from 'react';
-import {
-  View,
-  StyleSheet,
-  StatusBar,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { Context } from '../context';
 import type { ScreenProps } from '../typings';
 
 const Screen = ({ navigation }: ScreenProps) => {
-  const { dispatch, state } = useContext(Context);
+  const { dispatch } = useContext(Context);
   const { colors } = useTheme();
   const primary = { backgroundColor: colors.primary };
   const canGoBack = navigation.canGoBack();
@@ -21,10 +15,6 @@ const Screen = ({ navigation }: ScreenProps) => {
 
   return (
     <View style={styles.center}>
-      <StatusBar
-        backgroundColor={colors.card}
-        barStyle={state.isDark ? 'light-content' : 'dark-content'}
-      />
       {canGoBack && (
         <>
           <TouchableOpacity onPress={goBack} style={[primary, styles.button]}>
