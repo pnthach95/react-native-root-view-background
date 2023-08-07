@@ -34,6 +34,8 @@
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
+    "build:android": "cd example/android && ./gradlew assembleDebug --no-daemon --console=plain -PreactNativeArchitectures=arm64-v8a",
+    "build:ios": "cd example/ios && xcodebuild -workspace RootViewBackgroundExample.xcworkspace -scheme RootViewBackgroundExample -configuration Debug -sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO",
     "bootstrap": "yarn example && yarn install && yarn example pods",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
@@ -69,10 +71,11 @@
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
     "react": "18.2.0",
-    "react-native": "0.71.11",
+    "react-native": "0.72.3",
     "react-native-builder-bob": "^0.20.0",
     "release-it": "^15.0.0",
-    "typescript": "^4.5.2"
+    "turbo": "^1.10.7",
+    "typescript": "^5.0.2"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -84,7 +87,6 @@
   "engines": {
     "node": ">= 16.0.0"
   },
-  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -162,5 +164,10 @@
   },
   "dependencies": {
     "colord": "^2.9.3"
+  },
+  "codegenConfig": {
+    "name": "RNRootViewBackgroundSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
   }
 }

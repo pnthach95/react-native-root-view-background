@@ -18,8 +18,7 @@ Set background color of root view to fix white flash when using dark theme and n
     <img alt="react-native-gifted-chat" src="https://media.giphy.com/media/l4pT7TwVEaawBxBzG/giphy.gif" width="480" height="484" />
 </p>
 
-
-## Getting started
+## Installation
 
 `npm i @pnthach95/react-native-root-view-background --save`
 
@@ -29,7 +28,7 @@ or
 
 ## Usage
 
-```javascript
+```js
 import { setRootViewBackgroundColor } from '@pnthach95/react-native-root-view-background';
 
 const Main = () => {
@@ -38,6 +37,10 @@ const Main = () => {
   }, []);
 }
 ```
+
+## For Expo users:
+
+They have [SystemUI](https://docs.expo.dev/versions/latest/sdk/system-ui/) which is similar to this package
 
 ## Contributing
 
