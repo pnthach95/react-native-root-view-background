@@ -31,7 +31,7 @@ function setRootViewBackgroundColor(color: string) {
     parsedColor.toRgb().r,
     parsedColor.toRgb().g,
     parsedColor.toRgb().b,
-    1
+    255
   );
 }
 
