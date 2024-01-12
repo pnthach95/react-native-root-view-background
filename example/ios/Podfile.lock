@@ -375,7 +375,7 @@ PODS:
   - React-jsinspector (0.72.3)
   - React-logger (0.72.3):
     - glog
-  - react-native-root-view-background (1.4.0):
+  - react-native-root-view-background (1.4.2):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - react-native-safe-area-context (4.7.1):
@@ -741,7 +741,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 59d1eb03af7d30b7d66589c410f13151271e8006
   React-jsinspector: b511447170f561157547bc0bef3f169663860be7
   React-logger: c5b527272d5f22eaa09bb3c3a690fee8f237ae95
-  react-native-root-view-background: ec0cf90adc30e42f9e0945c5f3f9096089dcdd94
+  react-native-root-view-background: 4baf20f547a9cc55ff4578d487cbd88541f4dcf4
   react-native-safe-area-context: 9697629f7b2cda43cf52169bb7e0767d330648c2
   React-NativeModulesApple: c57f3efe0df288a6532b726ad2d0322a9bf38472
   React-perflogger: 6bd153e776e6beed54c56b0847e1220a3ff92ba5
@@ -769,4 +769,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4200fdcacc404c6fc0eafdbee8a1b09075736d6a
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3
