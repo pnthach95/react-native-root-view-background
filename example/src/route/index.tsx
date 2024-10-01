@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
 import {
   NavigationContainer,
@@ -13,9 +13,7 @@ import Screen from '../screens';
 import type { RootStackParamList } from '../typings';
 
 const styles = StyleSheet.create({
-  full: {
-    flex: 1,
-  },
+  full: { flex: 1 },
 });
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -34,10 +32,7 @@ const Container = () => {
 
   return (
     <NavigationContainer theme={selectTheme}>
-      <StatusBar
-        backgroundColor={selectTheme.colors.card}
-        barStyle={state.isDark ? 'light-content' : 'dark-content'}
-      />
+      <StatusBar translucent backgroundColor="transparent" />
       <Stack.Navigator>
         <Stack.Screen name="screen" component={Screen} />
       </Stack.Navigator>

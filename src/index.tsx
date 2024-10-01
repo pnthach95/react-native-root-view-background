@@ -2,7 +2,7 @@ import { NativeModules, Platform } from 'react-native';
 import { colord } from 'colord';
 
 const LINKING_ERROR =
-  `The package 'react-native-root-view-background' doesn't seem to be linked. Make sure: \n\n` +
+  `The package '@pnthach95/react-native-root-view-background' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
@@ -25,7 +25,7 @@ const RootViewBackground = RootViewBackgroundModule
       }
     );
 
-function setRootViewBackgroundColor(color: string) {
+export function setRootViewBackgroundColor(color: string) {
   const parsedColor = colord(color);
   RootViewBackground.setBackground(
     parsedColor.toRgb().r,
@@ -34,5 +34,3 @@ function setRootViewBackgroundColor(color: string) {
     255
   );
 }
-
-export { setRootViewBackgroundColor };

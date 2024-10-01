@@ -14,15 +14,17 @@ buildscript {
   }
 }
 
+def reactNativeArchitectures() {
+  def value = rootProject.getProperties().get("reactNativeArchitectures")
+  return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
+}
+
 def isNewArchitectureEnabled() {
   return rootProject.hasProperty("newArchEnabled") && rootProject.getProperty("newArchEnabled") == "true"
 }
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
-
-
-def appProject = rootProject.allprojects.find { it.plugins.hasPlugin('com.android.application') }
 
 if (isNewArchitectureEnabled()) {
   apply plugin: "com.facebook.react"
@@ -42,11 +44,7 @@ def supportsNamespace() {
   def minor = parsed[1].toInteger()
 
   // Namespace support was added in 7.3.0
-  if (major == 7 && minor >= 3) {
-    return true
-  }
-
-  return major >= 8
+  return (major == 7 && minor >= 3) || major >= 8
 }
 
 android {
@@ -67,6 +65,11 @@ android {
     targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
     buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
   }
+
+  buildFeatures {
+    buildConfig true
+  }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -87,8 +90,9 @@ android {
       if (isNewArchitectureEnabled()) {
         java.srcDirs += [
           "src/newarch",
-          // This is needed to build Kotlin project with NewArch enabled
-          "${project.buildDir}/generated/source/codegen/java"
+          // Codegen specs
+          "generated/java",
+          "generated/jni"
         ]
       } else {
         java.srcDirs += ["src/oldarch"]
