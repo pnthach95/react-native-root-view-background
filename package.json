@@ -1,7 +1,7 @@
 {
   "name": "@pnthach95/react-native-root-view-background",
   "title": "React Native Root View Background",
-  "version": "1.4.3",
+  "version": "1.4.6",
   "description": "Set root view background color for Android and iOS",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -26,9 +26,7 @@
     "cpp",
     "*.podspec",
     "!ios/build",
-    "!ios/generated",
     "!android/build",
-    "!android/generated",
     "!android/gradle",
     "!android/gradlew",
     "!android/gradlew.bat",
@@ -68,6 +66,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
+    "@react-native-community/cli": "15.0.0-alpha.2",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^29.5.5",
@@ -81,7 +80,7 @@
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.75.3",
-    "react-native-builder-bob": "^0.30.2",
+    "react-native-builder-bob": "^0.30.3",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
