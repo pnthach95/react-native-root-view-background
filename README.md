@@ -26,6 +26,10 @@ or
 
 `yarn add @pnthach95/react-native-root-view-background`
 
+> [!NOTE]
+> [It's not compatible with RN 0.76 yet.](https://github.com/callstack/react-native-builder-bob/discussions/670) PR welcome.
+> If latest version doesn't work, install v1.4.3 (newer versions are failed efforts to make it work in RN 0.76)
+
 ## Usage
 
 ```js
