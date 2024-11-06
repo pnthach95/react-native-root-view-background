@@ -27,7 +27,9 @@ or
 `yarn add @pnthach95/react-native-root-view-background`
 
 > [!NOTE]
-> If latest version doesn't work, try v1.4.3:
+> New arch supported since v1.4.8
+> 
+> If latest version doesn't work, try v1.4.3
 
 ## Usage
 
