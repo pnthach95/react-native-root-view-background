@@ -5,6 +5,7 @@
 @interface RootViewBackground : NSObject <NativeRootViewBackgroundSpec>
 #else
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
 @interface RootViewBackground : NSObject <RCTBridgeModule>
 #endif
