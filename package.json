@@ -67,9 +67,9 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
-    "@react-native-community/cli": "15.0",
+    "@react-native-community/cli": "15.0.1",
     "@react-native/eslint-config": "^0.76.0",
-    "@release-it/conventional-changelog": "^5.0.0",
+    "@release-it/conventional-changelog": "^9.0.2",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "commitlint": "^17.0.2",
@@ -81,8 +81,8 @@
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.76.1",
-    "react-native-builder-bob": "^0.30.3",
-    "release-it": "^15.0.0",
+    "react-native-builder-bob": "^0.37.0",
+    "release-it": "^17.10.0",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
   },
@@ -130,7 +130,10 @@
     "root": true,
     "extends": [
       "@react-native",
-      "prettier"
+      "eslint-config-prettier"
+    ],
+    "plugins": [
+      "eslint-plugin-prettier"
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
@@ -188,7 +191,7 @@
   },
   "codegenConfig": {
     "name": "RNRootViewBackgroundSpec",
-    "type": "all",
+    "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
       "ios": "ios/generated",
@@ -200,8 +203,8 @@
     "includesGeneratedCode": true
   },
   "create-react-native-library": {
-    "type": "module-mixed",
+    "type": "turbo-module",
     "languages": "kotlin-objc",
-    "version": "0.42.2"
+    "version": "0.48.3"
   }
 }
