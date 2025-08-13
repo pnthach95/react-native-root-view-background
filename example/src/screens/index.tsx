@@ -129,7 +129,7 @@ const Screen = ({ navigation }: ScreenProps) => {
           nunc. Pellentesque quis gravida ipsum. Vestibulum porta massa in
           pulvinar dignissim. Mauris tincidunt ex ut felis commodo, malesuada
           suscipit libero pulvinar. Ut lorem lectus, rhoncus quis vehicula nec,
-          congue eu lorem. Aliquam erat volutpat. Quisque ut feugiat libero.{' '}
+          congue eu lorem. Aliquam erat volutpat. Quisque ut feugiat libero.
         </Text>
       </ScrollView>
     </>
