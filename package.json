@@ -1,7 +1,7 @@
 {
   "name": "@pnthach95/react-native-root-view-background",
   "title": "React Native Root View Background",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "Set root view background color for Android and iOS",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
