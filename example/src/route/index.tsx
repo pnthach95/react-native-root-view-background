@@ -32,7 +32,11 @@ const Container = () => {
 
   return (
     <NavigationContainer theme={selectTheme}>
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle={state.isDark ? 'light-content' : 'dark-content'}
+      />
       <Stack.Navigator>
         <Stack.Screen name="screen" component={Screen} />
       </Stack.Navigator>

@@ -8,7 +8,7 @@ RCT_EXPORT_MODULE()
   return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_METHOD(setBackground:(double)r g:(double)g b:(double)b a:(double)a)
+- (void)setBackground:(double)r g:(double)g b:(double)b a:(double)a
 {
   dispatch_async( dispatch_get_main_queue(), ^{
     UIColor *color = [[UIColor alloc] initWithRed:r/255 green:g/255 blue:b/255 alpha:a/255];
@@ -17,13 +17,10 @@ RCT_EXPORT_METHOD(setBackground:(double)r g:(double)g b:(double)b a:(double)a)
   });
 }
 
-// Don't compile this code when we build for the old architecture.
-#ifdef RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:
     (const facebook::react::ObjCTurboModule::InitParams &)params
 {
   return std::make_shared<facebook::react::NativeRootViewBackgroundSpecJSI>(params);
 }
-#endif
 
 @end

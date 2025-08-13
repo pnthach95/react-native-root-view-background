@@ -3,16 +3,16 @@ package vn.pnthach95.reactnativerootviewbackground
 import android.app.Activity
 import android.graphics.Color
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.module.annotations.ReactModule
 
-class RootViewBackgroundModule internal constructor(context: ReactApplicationContext) :
-  RootViewBackgroundSpec(context) {
+@ReactModule(name = RootViewBackgroundModule.NAME)
+class RootViewBackgroundModule(reactContext: ReactApplicationContext) :
+  NativeRootViewBackgroundSpec(reactContext) {
 
   override fun getName(): String {
     return NAME
   }
 
-  @ReactMethod
   override fun setBackground(r: Double, g: Double, b: Double, a: Double) {
     val activity: Activity = currentActivity ?: return;
     activity.runOnUiThread(Runnable {

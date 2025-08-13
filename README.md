@@ -27,8 +27,11 @@ or
 `yarn add @pnthach95/react-native-root-view-background`
 
 > [!NOTE]
+> From v2, old arch is not supported
+
+> [!NOTE]
 > New arch supported since v1.4.8
-> 
+>
 > If latest version doesn't work, try v1.4.3
 
 ## Usage
@@ -49,7 +52,9 @@ They have [SystemUI](https://docs.expo.dev/versions/latest/sdk/system-ui/) which
 
 ## Contributing
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+- [Development workflow](CONTRIBUTING.md#development-workflow)
+- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
+- [Code of conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
