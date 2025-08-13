@@ -14,7 +14,7 @@ class RootViewBackgroundModule(reactContext: ReactApplicationContext) :
   }
 
   override fun setBackground(r: Double, g: Double, b: Double, a: Double) {
-    val activity: Activity = currentActivity ?: return
+    val activity: Activity = reactApplicationContext.currentActivity ?: return
     activity.runOnUiThread {
       val rootView = activity.window.decorView
       val parsedColor = Color.argb(a.toInt(), r.toInt(), g.toInt(), b.toInt())
