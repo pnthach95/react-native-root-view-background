@@ -22,10 +22,10 @@ class RootViewBackgroundPackage : BaseReactPackage() {
       moduleInfos[RootViewBackgroundModule.NAME] = ReactModuleInfo(
         RootViewBackgroundModule.NAME,
         RootViewBackgroundModule.NAME,
-        false,  // canOverrideExistingModule
-        false,  // needsEagerInit
-        false,  // isCxxModule
-        true // isTurboModule
+        canOverrideExistingModule = false,
+        needsEagerInit = false,
+        isCxxModule = false,
+        isTurboModule = true
       )
       moduleInfos
     }
