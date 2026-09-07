@@ -10,7 +10,10 @@ const root = path.resolve(__dirname, '..');
  *
  * @type {import('metro-config').MetroConfig}
  */
-module.exports = withMetroConfig(getDefaultConfig(__dirname), {
+const config = withMetroConfig(getDefaultConfig(__dirname), {
   root,
   dirname: __dirname,
+  conditions: ['react-native-root-view-background-source'],
 });
+
+module.exports = config;
