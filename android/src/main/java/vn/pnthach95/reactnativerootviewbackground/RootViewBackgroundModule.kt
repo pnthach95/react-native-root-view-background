@@ -5,13 +5,8 @@ import android.graphics.Color
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.annotations.ReactModule
 
-@ReactModule(name = RootViewBackgroundModule.NAME)
 class RootViewBackgroundModule(reactContext: ReactApplicationContext) :
   NativeRootViewBackgroundSpec(reactContext) {
-
-  override fun getName(): String {
-    return NAME
-  }
 
   override fun setBackground(r: Double, g: Double, b: Double, a: Double) {
     val activity: Activity = reactApplicationContext.currentActivity ?: return
@@ -23,6 +18,6 @@ class RootViewBackgroundModule(reactContext: ReactApplicationContext) :
   }
 
   companion object {
-    const val NAME = "RootViewBackground"
+    const val NAME = NativeRootViewBackgroundSpec.NAME
   }
 }

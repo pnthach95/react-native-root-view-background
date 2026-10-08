@@ -16,18 +16,16 @@ class RootViewBackgroundPackage : BaseReactPackage() {
     }
   }
 
-  override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
-    return ReactModuleInfoProvider {
-      val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
-      moduleInfos[RootViewBackgroundModule.NAME] = ReactModuleInfo(
-        RootViewBackgroundModule.NAME,
-        RootViewBackgroundModule.NAME,
+  override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
+    mapOf(
+      RootViewBackgroundModule.NAME to ReactModuleInfo(
+        name = RootViewBackgroundModule.NAME,
+        className = RootViewBackgroundModule.NAME,
         canOverrideExistingModule = false,
         needsEagerInit = false,
         isCxxModule = false,
         isTurboModule = true
       )
-      moduleInfos
-    }
+    )
   }
 }

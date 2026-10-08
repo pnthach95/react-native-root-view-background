@@ -59,27 +59,27 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/compat": "^2.1.0",
-    "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^10.0.1",
-    "@react-native/babel-preset": "0.85.0",
-    "@react-native/eslint-config": "0.85.0",
-    "@release-it/conventional-changelog": "^11.0.1",
+    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/js": "^9.39.5",
+    "@react-native/babel-preset": "0.86.2",
+    "@react-native/eslint-config": "0.86.2",
+    "@release-it/conventional-changelog": "^12.0.0",
     "@types/react": "^19.2.0",
-    "commitlint": "^21.0.2",
+    "commitlint": "^21.2.1",
     "del-cli": "^7.0.0",
-    "eslint": "^9.39.4",
+    "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-ft-flow": "^3.0.11",
     "eslint-plugin-prettier": "^5.5.6",
-    "lefthook": "^2.1.9",
-    "prettier": "^3.8.3",
+    "lefthook": "^2.1.10",
+    "prettier": "^3.9.6",
     "react": "19.2.3",
-    "react-native": "0.85.0",
-    "react-native-builder-bob": "^0.41.0",
-    "release-it": "^20.2.0",
-    "turbo": "^2.9.16",
+    "react-native": "0.86.2",
+    "react-native-builder-bob": "^0.43.1",
+    "release-it": "^21.0.1",
+    "turbo": "^2.10.8",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
@@ -158,6 +158,6 @@
       "release-it",
       "eslint"
     ],
-    "version": "0.63.0"
+    "version": "0.63.1"
   }
 }

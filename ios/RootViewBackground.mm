@@ -1,8 +1,6 @@
 #import "RootViewBackground.h"
 
 @implementation RootViewBackground
-RCT_EXPORT_MODULE()
-
 - (dispatch_queue_t)methodQueue
 {
   return dispatch_get_main_queue();
@@ -21,6 +19,11 @@ RCT_EXPORT_MODULE()
     (const facebook::react::ObjCTurboModule::InitParams &)params
 {
   return std::make_shared<facebook::react::NativeRootViewBackgroundSpecJSI>(params);
+}
+
++ (NSString *)moduleName
+{
+  return @"RootViewBackground";
 }
 
 @end
