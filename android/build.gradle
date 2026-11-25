@@ -1,36 +1,19 @@
-buildscript {
-  ext.RootViewBackground = [
-    kotlinVersion: "2.0.21",
-    minSdkVersion: 24,
-    compileSdkVersion: 36
-  ]
+ext.RootViewBackground = [
+  minSdkVersion: 24,
+  compileSdkVersion: 36
+]
 
-  ext.getExtOrDefault = { prop ->
-    if (rootProject.ext.has(prop)) {
-      return rootProject.ext.get(prop)
-    }
-
-    return RootViewBackground[prop]
+ext.getExtOrDefault = { prop ->
+  if (rootProject.ext.has(prop)) {
+    return rootProject.ext.get(prop)
   }
 
-  repositories {
-    google()
-    mavenCentral()
-  }
-
-  dependencies {
-    classpath "com.android.tools.build:gradle:8.7.2"
-    // noinspection DifferentKotlinGradleVersion
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion')}"
-  }
+  return RootViewBackground[prop]
 }
 
 
 apply plugin: "com.android.library"
-// AGP 9 ships built-in Kotlin support and registers the `kotlin` extension
-// itself. Applying the Kotlin plugin on top of it fails configuration with
-// "Cannot add extension with name 'kotlin'". Only apply it when nothing has
-// registered that extension yet.
+
 if (project.extensions.findByName("kotlin") == null) {
   apply plugin: "kotlin-android"
 }
@@ -44,11 +27,6 @@ android {
 
   defaultConfig {
     minSdkVersion getExtOrDefault("minSdkVersion")
-  }
-
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_17
-    targetCompatibility JavaVersion.VERSION_17
   }
 }
 
